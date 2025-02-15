@@ -17053,7 +17053,7 @@ let bills = [
    partySupport:"Democratic",
    summary:"",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Veterans'] 
 },
 {
    bill_id:"H.Res. 93",
@@ -17089,7 +17089,7 @@ let bills = [
    partySupport:"Republican",
    summary:"9/11 Memorial and Museum Act This bill directs the Department of Homeland Security to award to the nonprofit organization that operates the National September 11 Memorial &amp; Museum in New York,New York, a one-time grant to be used solely for the purposes of the operation,security,and maintenance of the memorial and museum.As a condition of receiving the grant,the organization must<ul> provide for free admission to all facilities and museums associated with the memorial and museum for active and retired members of the Armed Forces,individuals who were registered first responders to the terrorist attacks of September 11,2001,and family members of victims of such attacks;  provide for dedicated free admission hours for the general public at least once a week; and  allow for annual federal audits of its financial statements. ",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','9/11'] 
 },
 {
    bill_id:"H.R. 776",
@@ -17116,7 +17116,7 @@ let bills = [
    partySupport:"Republican",
    summary:"China Exchange Rate Transparency Act of 2023 This bill requires the U.S. Executive Director at the International Monetary Fund (IMF) to use the voice and vote of the United States to advocate for increased exchange rate transparency from China.Some areas of focus for this advocacy are (1) Chinese exchange rate arrangements,including any indirect foreign exchange market intervention through Chinese financial institutions or state-owned enterprises; (2) enhanced multilateral and bilateral surveillance by the IMF; and (3) stronger consideration of China's performance as a responsible stakeholder in the international monetary system when evaluating quota and voting shares at the IMF.The requirements of the bill expire seven years and 30 days after the date of the bill's enactment or earlier if China meets certain conditions regarding its exchange rate policies.",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','China'] 
 },
 {
    bill_id:"H.Res. 53",
@@ -17125,7 +17125,7 @@ let bills = [
    partySupport:"Republican",
    summary:"",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Environmental'] 
 },
 {
    bill_id:"H.R. 471",
@@ -17134,7 +17134,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Fix Our Forests Act This bill establishes requirements for managing forests on federal land,including requirements concerning reducing wildfire threats,expediting the review of certain forest management projects,and implementing forest management projects and other activities.Specifically,the bill (1) designates certain firesheds at high risk for wildfires as fireshed management areas; (2) directs the U.S. Forest Service and U.S. Geological Survey to jointly establish an interagency Fireshed Center that is responsible for duties related to assessing and predicting fire,including maintaining a fireshed registry on a publicly accessible website that provides interactive geospatial data on individual firesheds; and (3) makes other requirements related to reducing wildfire.Next,the bill expedites the review of certain forest management projects under the National Environmental Policy Act (NEPA) of 1969 and exempts certain activities from NEPA review. It also establishes intra-agency strike teams to accelerate the review and any interagency consultation processes under NEPA,the Endangered Species Act of 1973,and the National Historic Preservation Act. It also limits consultation requirements concerning threatened and endangered species under the Forest and Rangeland Renewable Resources Planning Act of 1974 and the Federal Land Management and Policy Act of 1976. Finally,it limits litigation involving fireshed management projects and limits remedies that courts may provide.Additionally,the bill supports reducing community wildfire risks,carrying out forest restoration and stewardship activities (including watershed protection and restoration),conducting biochar demonstration projects,advancing technologies to address forest wildfires,and assisting wildland firefighters and their families.",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Environmental'] 
 },
 {
    bill_id:"S. 146",
@@ -17143,7 +17143,7 @@ let bills = [
    partySupport:"Republican",
    summary:"",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','AI'] 
 },
 {
    bill_id:"H.R. 386",
@@ -17152,7 +17152,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Chinese Currency Accountability Act of 2025 This bill requires the United States to oppose,absent specified conditions,any increase in the weight of Chinese currency (i.e.,the renminbi) in the basket of currencies (currently,a set of five currencies,each with different weightings) used to determine the value of Special Drawing Rights. Special Drawing Rights are international reserve assets created by the International Monetary Fund (IMF) to supplement member countries' official foreign exchange reserves.Specifically,the Department of the Treasury must instruct certain U.S. officials at the IMF to oppose any such increase unless Treasury has certified that China is in compliance with certain standards and international agreements,including that (1) China is in compliance with all general obligations of members of the IMF,(2) China has not been found to have manipulated its currency in the preceding 12 months,and (3) China adheres to the rules and principles of the Paris Club and the Organisation for Economic Co-operation and Development (OECD) Arrangement on Officially Supported Export Credits. ",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','China'] 
 },
 {
    bill_id:"H.R. 375",
@@ -17188,7 +17188,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Disabled Veterans Housing Support Act This bill excludes compensation received for a military service-connected disability from a veteran's income when determining eligibility for assistance under the Community Development Block Grant (CDBG) program.The CDBG program provides grants to urban communities for development activities focused on revitalizing neighborhoods,economic development,and providing improved community facilities and services.Additionally,the Government Accountability Office must report on how service-connected disability compensation is treated when determining eligibility for all programs administered by the Department of Housing and Urban Development. This includes identifying instances where the treatment of such compensation is inconsistent with the requirement under this bill.",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Veterans'] 
 },
 
 {
@@ -17225,7 +17225,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Amtrak Executive Bonus Disclosure Act This bill requires Amtrak to publicly disclose the annual base pay and bonus compensation paid to an Amtrak executive in a required annual report to Congress.Specifically, Amtrak must incorporate into the annual report the annual base pay and any bonus compensation paid to a member of the executive leadership team. This must include the criteria and metrics used to determine any bonus compensation.Further,Amtrak must make the annual report available on Amtrak's public website.",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Amtrak'] 
 },
 {
    bill_id:"H.R. 189",
@@ -17243,7 +17243,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Modernizing Access to our Public Waters Act or the MAPWaters Act of 2025 or the MAPWaters Act of 2025 This bill directs the Forest Service and the Department of the Interior to standardize and publish data relating to public's access to federal waterways for recreational use.Specifically,the Forest Service and Interior must jointly develop and adopt interagency standards for data collection and dissemination of geospatial data relating to public outdoor recreational  access of federal waterways and federal fishing restrictions. The standards must ensure compatibility and interoperability among applicable federal databases with respect to collection and dissemination of such data.Within five years,the Forest Service and Interior must also digitize and make publicly available online certain geographic information system data about (1) federal waterway restrictions,(2) federal waterway access and navigation information,and (3) federal fishing restrictions. They must also update the data about waterway restrictions,waterway access,and navigation information at least twice per year. Data about fishing restrictions must be updated in real time as changes go into effect. Finally,the Forest Service and Interior must develop a process to allow members of the public to submit questions or comments regarding the data regarding waterway restrictions, waterway access,and navigation information.",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Environmental'] 
 },
 {
    bill_id:"H.R. 186",
@@ -17306,7 +17306,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Midnight Rules Relief Act This bill allows Congress to disapprove multiple regulations under one joint resolution of disapproval if the regulations were submitted for review during a portion  of the final year of a President's term. Under current law,the Congressional Review Act generally provides for a period of additional review during the succeeding Congress for regulations that were submitted during the last 60 legislative days of the prior Congress. However,each joint resolution may disapprove of only one regulation.",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Presidential'] 
 },
 {
    bill_id:"H.R. 43",
@@ -17351,7 +17351,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Preventing Violence Against Women by Illegal Aliens Act This bill establishes certain criminal grounds for making non-U.S. nationals (<em>aliens </em>under federal law) inadmissible and expands the crimes for which a non-U.S. national is deportable.First,the bill establishes that a non-U.S. national is inadmissible if the individual has admitted to or is convicted of acts constituting the essential elements of stalking,child abuse,child neglect,child abandonment,a sex offense,conspiracy to commit a sex offense,a violation of certain protection orders,or domestic violence (including physical or sexual abuse or a pattern of coercive behavior when it occurs within certain close relationships).  Next,the bill establishes additional grounds for deportation. Under current law,a non-U.S. national is deportable for certain criminal convictions,including domestic violence,stalking,and child abuse. The bill makes any sex offense (including crimes against minors) or conspiracy to commit a sex offense a basis for deportation. The bill also expands the domestic violence crimes that make a non-U.S. national deportable to include physical or sexual abuse or a pattern of coercive behavior when it occurs within certain close relationships.",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Immigration'] 
 },
 {
    bill_id:"H.R. 29",
@@ -17360,7 +17360,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Laken Riley Act This bill requires the Department of Homeland Security (DHS) to detain certain non-U.S. nationals (<em>aliens</em> under federal law) who have been arrested for burglary,theft,larceny,or shoplifting. The bill also authorizes states to sue the federal government for decisions or alleged failures related to immigration enforcement.Under this bill,DHS must detain an individual who (1) is unlawfully present in the United States or did not possess the necessary documents when applying for admission; and (2) has been charged with,arrested for,convicted of,or admits to having committed acts that constitute the essential elements of burglary,theft,larceny,or shoplifting.The bill also authorizes state governments to sue for injunctive relief over certain immigration-related decisions or alleged failures by the federal government if the decision or failure caused the state or its residents harm,including financial harm of more than $100. Specifically,the state government may sue the federal government over a<ul> decision to release a non-U.S. national from custody;  failure to fulfill requirements relating to inspecting individuals seeking admission into the United States,including requirements related to asylum interviews;  failure to fulfill a requirement to stop issuing visas to nationals of a country that unreasonably denies or delays acceptance of nationals of that country;  violation of limitations on immigration parole,such as the requirement that parole be granted only on a case-by-case basis; or  failure to detain an individual who has been ordered removed from the United States. ",
    currentStep:"Signed into Law",
-   tags: ['Signed into Law'] 
+   tags: ['Signed into Law','Immigration'] 
 },
 {
    bill_id:"H.R. 28",
@@ -17405,7 +17405,7 @@ let bills = [
    partySupport:"Republican",
    summary:"<b>Born-Alive Abortion Survivors Protection Act</b>  This bill establishes requirements for the degree of care a health care practitioner must provide in the case of a child born alive following an abortion or attempted abortion.  Specifically,a health care practitioner who is present must (1) exercise the same degree of care as would reasonably be provided to any other child born alive at the same gestational age,and (2) ensure the child is immediately admitted to a hospital. Additionally,a health care practitioner or other employee who has knowledge of a failure to comply with the degree-of-care requirements must immediately report such failure to law enforcement. A health care practitioner who fails to provide the required degree of care,or a health care practitioner or other employee who fails to report such failure,is subject to criminal penalties—a fine,up to five years in prison,or both.   An individual who intentionally kills or attempts to kill a child born alive is subject to prosecution for murder. The bill bars the criminal prosecution of a mother of a child born alive under this bill and allows her to bring a civil action against a health care practitioner or other employee for violations. ",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Abortion'] 
 },
 {
    bill_id:"H.Res. 5",
