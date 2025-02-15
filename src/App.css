@@ -143,25 +143,47 @@ footer {
 }
 
 .chip {
-  background-color: #3498db;
+  background-color: #666; /* Default color for chip */
   color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 1.5rem;
-  margin: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  margin: 0rem 0.5rem;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   transition: background-color 0.2s ease, transform 0.1s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .chip:hover {
-  background-color: #2980b9;
+  background-color: #444;
   transform: translateY(-1px);
 }
 
 .chip.active {
   background-color: #2980b9;
 }
+
+/* Dynamic Tag Color Styles */
+.chip.tag-transgender {
+  background-color: #ff9090;
+}
+
+.chip.tag-pinned {
+  background-color: #ffd000;
+}
+
+.chip.tag-lgbtq {
+  background-color: #5cb0ff;
+}
+
+.chip.tag-china {
+  background-color: #ff5c5c;
+}
+
+.chip.tag-environmental {
+  background-color: #19c422;
+}
+
 
 /* General tag style */
 .tag {
@@ -172,7 +194,8 @@ footer {
   display: inline-block;
   background-color: #666;  /* Default color */
   color: #fff;
-  margin-top: 0.5rem;  /* Add some space at the top of tags */
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Dynamic Tag Color Styles */
@@ -180,18 +203,24 @@ footer {
   background-color: #ff9090;
 }
 
-/* Dynamic Tag Color Styles */
 .tag.tag-pinned {
   background-color: #ffd000;
 }
+
 .tag.tag-lgbtq {
   background-color: #5cb0ff;
 }
+
 .tag.tag-china {
   background-color: #ff5c5c;
 }
+
 .tag.tag-environmental {
   background-color: #19c422;
+}
+
+.tag:hover {
+  transform: scale(1.1);
 }
 
 /* Search Bar Styling */
@@ -202,7 +231,7 @@ footer {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  box-sizing: border-box;
 }
 
 .search-bar:focus {
