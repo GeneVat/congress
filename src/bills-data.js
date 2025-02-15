@@ -1069,7 +1069,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced','Alaska','Alaska'] 
+       tags: ['Introduced','Alaska'] 
   },
    {
        bill_id:"S. 572",
@@ -17044,7 +17044,7 @@ let bills = [
    partySupport:"Democratic",
    summary:"Credit Union Board Modernization Act  This bill reduces the required frequency of meetings held by the board of directors of certain credit unions. Under the bill,new credit unions and credit unions with a low soundness rating must meet monthly,as required under current law. All other credit unions must hold at least six meetings annually,with at least one meeting held during each fiscal quarter.",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Economic'] 
 },
 {
    bill_id:"H.R. 965",
@@ -17062,7 +17062,7 @@ let bills = [
    partySupport:"Republican",
    summary:"",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Drugs'] 
 },
 {
    bill_id:"H.R. 837",
