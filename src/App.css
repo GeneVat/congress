@@ -177,15 +177,21 @@ footer {
 
 /* Dynamic Tag Color Styles */
 .tag.tag-transgender {
-  background-color: #fa60b5;
+  background-color: #ff9090;
 }
 
 /* Dynamic Tag Color Styles */
 .tag.tag-pinned {
-  background-color: #99802e;
+  background-color: #ffd000;
 }
 .tag.tag-lgbtq {
-  background-color: #2e9200;
+  background-color: #5cb0ff;
+}
+.tag.tag-china {
+  background-color: #ff5c5c;
+}
+.tag.tag-environmental {
+  background-color: #19c422;
 }
 
 /* Search Bar Styling */
