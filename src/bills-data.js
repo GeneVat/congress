@@ -1069,7 +1069,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced'] 
+       tags: ['Introduced','Alaska','Alaska'] 
   },
    {
        bill_id:"S. 572",
@@ -1726,7 +1726,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced'] 
+       tags: ['Introduced','Alaska'] 
   },
    {
        bill_id:"S. 552",
@@ -1744,7 +1744,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced'] 
+       tags: ['Introduced','Alaska'] 
   },
    {
        bill_id:"S. 550",
@@ -8890,7 +8890,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced'] 
+       tags: ['Introduced','Alaska'] 
   },
    {
        bill_id:"S. 254",
@@ -8899,7 +8899,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced'] 
+       tags: ['Introduced','Alaska'] 
   },
    {
        bill_id:"S. 253",
@@ -13003,7 +13003,7 @@ let bills = [
        partySupport:"Republican",
        summary:"Alaska Native Vietnam Era Veterans Land Allotment Extension Act of 2025 This bill extends for an additional five years the time period during which an eligible Alaska Native veteran may apply for a land allotment under the Alaska Native Vietnam Era Veterans Land Allotment Program. The program makes Alaska Native veterans who served in the Armed Forces in Vietnam between August 5,1964,and December 31,1971,or their heirs eligible to receive up to 160 acres of federal land in Alaska.Under the current program,the Department of the Interior's Bureau of Land Management may accept applications through December 29,2025. This bill extends this time period for an additional five years to December 29,2030.",
        currentStep:"Introduced",
-       tags: ['Introduced'] 
+       tags: ['Introduced','Alaska'] 
   },
    {
        bill_id:"H.R. 409",
@@ -16927,7 +16927,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced'] 
+       tags: ['Introduced','Alaska'] 
   },
    {
        bill_id:"H.R. 40",
@@ -17315,7 +17315,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Alaska Native Village Municipal Lands Restoration Act of 2025 This bill removes the requirement that Alaska Native village corporations must convey lands to Alaska to be held in trust for future municipal governments. The Alaska Native Claims Settlement Act (ANCSA) requires all Alaska Native village corporations that receive land under the ANCSA to convey certain lands to the existing municipality in the village or,if no municipality exists,to Alaska in trust for any municipality that may be established in the future. This bill removes the requirement for conveyance. Additionally,the bill allows village corporations to regain title to the lands held in trust by dissolving the trust through formal resolution by the village corporation and the residents of the Native village.",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Alaska'] 
 },
 {
    bill_id:"H.R. 42",
@@ -17324,7 +17324,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Alaska Native Settlement Trust Eligibility Act This bill excludes certain settlement trust payments to an Alaska Native or descendant of an Alaska Native who is aged,blind,or disabled for purposes of determining the individual's eligibility for certain need-based federal programs (e.g.,the Supplemental Nutrition Assistance Program).",
    currentStep:"Passed One House",
-   tags: ['Passed One House'] 
+   tags: ['Passed One House','Alaska'] 
 },
 {
    bill_id:"H.R. 35",
