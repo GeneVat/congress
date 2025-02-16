@@ -1069,7 +1069,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced','Alaska'] 
+       tags: ['Introduced'] 
   },
    {
        bill_id:"S. 572",
@@ -1726,7 +1726,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced','Alaska'] 
+       tags: ['Introduced'] 
   },
    {
        bill_id:"S. 552",
@@ -1744,7 +1744,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced','Alaska'] 
+       tags: ['Introduced'] 
   },
    {
        bill_id:"S. 550",
@@ -8890,7 +8890,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced','Alaska'] 
+       tags: ['Introduced'] 
   },
    {
        bill_id:"S. 254",
@@ -8899,7 +8899,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced','Alaska'] 
+       tags: ['Introduced'] 
   },
    {
        bill_id:"S. 253",
@@ -13003,7 +13003,7 @@ let bills = [
        partySupport:"Republican",
        summary:"Alaska Native Vietnam Era Veterans Land Allotment Extension Act of 2025 This bill extends for an additional five years the time period during which an eligible Alaska Native veteran may apply for a land allotment under the Alaska Native Vietnam Era Veterans Land Allotment Program. The program makes Alaska Native veterans who served in the Armed Forces in Vietnam between August 5,1964,and December 31,1971,or their heirs eligible to receive up to 160 acres of federal land in Alaska.Under the current program,the Department of the Interior's Bureau of Land Management may accept applications through December 29,2025. This bill extends this time period for an additional five years to December 29,2030.",
        currentStep:"Introduced",
-       tags: ['Introduced','Alaska'] 
+       tags: ['Introduced'] 
   },
    {
        bill_id:"H.R. 409",
@@ -16927,7 +16927,7 @@ let bills = [
        partySupport:"Republican",
        summary:"",
        currentStep:"Introduced",
-       tags: ['Introduced','Alaska'] 
+       tags: ['Introduced'] 
   },
    {
        bill_id:"H.R. 40",
@@ -17044,7 +17044,7 @@ let bills = [
    partySupport:"Democratic",
    summary:"Credit Union Board Modernization Act  This bill reduces the required frequency of meetings held by the board of directors of certain credit unions. Under the bill,new credit unions and credit unions with a low soundness rating must meet monthly,as required under current law. All other credit unions must hold at least six meetings annually,with at least one meeting held during each fiscal quarter.",
    currentStep:"Passed One House",
-   tags: ['Passed One House','Economic'] 
+   tags: ['Passed One House'] 
 },
 {
    bill_id:"H.R. 965",
@@ -17062,7 +17062,7 @@ let bills = [
    partySupport:"Republican",
    summary:"",
    currentStep:"Passed One House",
-   tags: ['Passed One House','Drugs'] 
+   tags: ['Passed One House'] 
 },
 {
    bill_id:"H.R. 837",
@@ -17089,7 +17089,7 @@ let bills = [
    partySupport:"Republican",
    summary:"9/11 Memorial and Museum Act This bill directs the Department of Homeland Security to award to the nonprofit organization that operates the National September 11 Memorial &amp; Museum in New York,New York, a one-time grant to be used solely for the purposes of the operation,security,and maintenance of the memorial and museum.As a condition of receiving the grant,the organization must<ul> provide for free admission to all facilities and museums associated with the memorial and museum for active and retired members of the Armed Forces,individuals who were registered first responders to the terrorist attacks of September 11,2001,and family members of victims of such attacks;  provide for dedicated free admission hours for the general public at least once a week; and  allow for annual federal audits of its financial statements. ",
    currentStep:"Passed One House",
-   tags: ['Passed One House','9/11'] 
+   tags: ['Passed One House'] 
 },
 {
    bill_id:"H.R. 776",
@@ -17143,7 +17143,7 @@ let bills = [
    partySupport:"Republican",
    summary:"",
    currentStep:"Passed One House",
-   tags: ['Passed One House','AI'] 
+   tags: ['Passed One House'] 
 },
 {
    bill_id:"H.R. 386",
@@ -17225,7 +17225,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Amtrak Executive Bonus Disclosure Act This bill requires Amtrak to publicly disclose the annual base pay and bonus compensation paid to an Amtrak executive in a required annual report to Congress.Specifically, Amtrak must incorporate into the annual report the annual base pay and any bonus compensation paid to a member of the executive leadership team. This must include the criteria and metrics used to determine any bonus compensation.Further,Amtrak must make the annual report available on Amtrak's public website.",
    currentStep:"Passed One House",
-   tags: ['Passed One House','Amtrak'] 
+   tags: ['Passed One House'] 
 },
 {
    bill_id:"H.R. 189",
@@ -17315,7 +17315,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Alaska Native Village Municipal Lands Restoration Act of 2025 This bill removes the requirement that Alaska Native village corporations must convey lands to Alaska to be held in trust for future municipal governments. The Alaska Native Claims Settlement Act (ANCSA) requires all Alaska Native village corporations that receive land under the ANCSA to convey certain lands to the existing municipality in the village or,if no municipality exists,to Alaska in trust for any municipality that may be established in the future. This bill removes the requirement for conveyance. Additionally,the bill allows village corporations to regain title to the lands held in trust by dissolving the trust through formal resolution by the village corporation and the residents of the Native village.",
    currentStep:"Passed One House",
-   tags: ['Passed One House','Alaska'] 
+   tags: ['Passed One House'] 
 },
 {
    bill_id:"H.R. 42",
@@ -17324,7 +17324,7 @@ let bills = [
    partySupport:"Republican",
    summary:"Alaska Native Settlement Trust Eligibility Act This bill excludes certain settlement trust payments to an Alaska Native or descendant of an Alaska Native who is aged,blind,or disabled for purposes of determining the individual's eligibility for certain need-based federal programs (e.g.,the Supplemental Nutrition Assistance Program).",
    currentStep:"Passed One House",
-   tags: ['Passed One House','Alaska'] 
+   tags: ['Passed One House'] 
 },
 {
    bill_id:"H.R. 35",
