@@ -7,22 +7,24 @@ function App() {
   const [bills, setBills] = useState([]);
   const [searchInput, setSearchInput] = useState('');
   const [filterChips, setFilterChips] = useState([]);
-  const [availableFilters, setAvailableFilters] = useState([]);
   const [availableTags, setAvailableTags] = useState([]);
   const [showIntroduced, setShowIntroduced] = useState(false); // For toggling "Introduced" tags
   const [currentPage, setCurrentPage] = useState(1);
   const [billsPerPage] = useState(20); // Number of bills to show per page
   const steps = billsData.getSteps();
 
+  // Hardwired tags that should not show up or be selectable
+  const excludedTags = ['Pinned']; // Add tags that should be hidden here
+
   useEffect(() => {
     const getBills = async () => {
       await fetchBills();
       setBills(billsData.getBills());
 
-      // Extract all unique tags from the bills
+      // Extract all unique tags from the bills, excluding hardwired tags
       const allTags = billsData.getBills().reduce((acc, bill) => {
         bill.tags.forEach(tag => {
-          if (!acc.includes(tag)) {
+          if (!acc.includes(tag) && !excludedTags.includes(tag)) {
             acc.push(tag);
           }
         });
@@ -46,13 +48,13 @@ function App() {
     setSearchInput(event.target.value);
   };
 
+  // Updated filter logic to ensure all filters must be met
   const filteredBills = bills.filter((bill) => {
     const matchesSearchTerm = bill.title.toLowerCase().includes(searchInput.toLowerCase()) ||
       bill.summary.toLowerCase().includes(searchInput.toLowerCase());
 
-    const matchesFilters = filterChips.length === 0 ||
-      filterChips.includes(bill.filter) ||
-      bill.tags.some(tag => filterChips.includes(tag));
+    // Check if bill has all selected filter tags
+    const matchesFilters = filterChips.length === 0 || filterChips.every(chip => bill.tags.includes(chip));
 
     // Ensure pinned bills are always shown, even if Introduced is hidden
     const matchesIntroducedTag = (showIntroduced || !bill.tags.includes('Introduced')) || bill.tags.includes('Pinned');
@@ -63,7 +65,7 @@ function App() {
   const getFilteredSuggestions = () => {
     const inputValue = searchInput.trim().toLowerCase();
     const inputLength = inputValue.length;
-    return inputLength === 0 ? [] : [...availableFilters, ...availableTags].filter(
+    return inputLength === 0 ? [] : availableTags.filter(
       (filter) => filter.toLowerCase().slice(0, inputLength) === inputValue
     );
   };
@@ -78,10 +80,20 @@ function App() {
   };
 
   // Sort the bills such that pinned ones are at the top
+  // Pinned bills are still at the top but now we sort by the `steps` order for all bills
   const sortedBills = filteredBills.sort((a, b) => {
     const aIsPinned = a.tags.includes('Pinned');
     const bIsPinned = b.tags.includes('Pinned');
-    return bIsPinned - aIsPinned; // Place pinned bills at the top
+    if (aIsPinned && !bIsPinned) {
+      return -1; // Pinned bills come first
+    } else if (!aIsPinned && bIsPinned) {
+      return 1; // Pinned bills come first
+    }
+
+    // If both are pinned or both are not pinned, compare by step
+    const stepIndexA = steps.indexOf(a.currentStep);
+    const stepIndexB = steps.indexOf(b.currentStep);
+    return stepIndexB - stepIndexA; // Sort by step in reverse order (farther along in process comes first)
   });
 
   const toggleIntroduced = () => setShowIntroduced(!showIntroduced);
@@ -135,7 +147,7 @@ function App() {
             </ul>
           )}
         </div>
-
+  {/* Display Available Tags at the Top */}            <div className="available-tags">           <strong>Available Tags:</strong>           {availableTags.length > 0 && (             <div className="tags">               {availableTags.map((tag, index) => (                 <span                   key={index}                   className={`tag tag-${tag.toLowerCase().replace(/\s+/g, '-')}`}                   onClick={() => handleChipClick(tag)}                 >                   {tag}                 </span>               ))}             </div>           )}         </div>
         {/* Filter Chips */}
         <div className="filter-chips">
           {filterChips.map((chip) => (
