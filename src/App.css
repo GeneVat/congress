@@ -173,16 +173,13 @@ footer {
 }
 
 .chip.tag-lgbtq {
-  background-color: #5cb0ff;
+  background-color: #00a4af;
 }
 
-.chip.tag-china {
-  background-color: #ff5c5c;
+.chip.tag-dei {
+  background-color: #00a4af;
 }
 
-.chip.tag-environmental {
-  background-color: #19c422;
-}
 
 
 /* General tag style */
@@ -211,13 +208,11 @@ footer {
   background-color: #5cb0ff;
 }
 
-.tag.tag-china {
-  background-color: #ff5c5c;
+.tag.tag-dei {
+  background-color: #00a4af;
 }
 
-.tag.tag-environmental {
-  background-color: #19c422;
-}
+
 
 .tag:hover {
   transform: scale(1.1);
