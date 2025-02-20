@@ -163,23 +163,6 @@ footer {
   background-color: #2980b9;
 }
 
-/* Dynamic Tag Color Styles */
-.chip.tag-transgender {
-  background-color: #ff9090;
-}
-
-.chip.tag-pinned {
-  background-color: #ffd000;
-}
-
-.chip.tag-lgbtq {
-  background-color: #00a4af;
-}
-
-.chip.tag-dei {
-  background-color: #00a4af;
-}
-
 
 
 /* General tag style */
