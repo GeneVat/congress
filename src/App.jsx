@@ -8,21 +8,30 @@ function App() {
   const [searchInput, setSearchInput] = useState('');
   const [filterChips, setFilterChips] = useState([]);
   const [availableTags, setAvailableTags] = useState([]);
-  const [showIntroduced, setShowIntroduced] = useState(false); // For toggling "Introduced" tags
   const [currentPage, setCurrentPage] = useState(1);
-  const [billsPerPage] = useState(20); // Number of bills to show per page
+  const [billsPerPage] = useState(20);
+  const [visibleBillDetails, setVisibleBillDetails] = useState(null); // Track visible bill details
   const steps = billsData.getSteps();
 
-  // Hardwired tags that should not show up or be selectable
-  const excludedTags = ['Pinned']; // Add tags that should be hidden here
+  const excludedTags = ['Pinned'];
 
   useEffect(() => {
     const getBills = async () => {
       await fetchBills();
-      setBills(billsData.getBills());
+      const billsList = billsData.getBills();
 
-      // Extract all unique tags from the bills, excluding hardwired tags
-      const allTags = billsData.getBills().reduce((acc, bill) => {
+      const sanitizedBills = billsList.map(bill => ({
+        ...bill,
+        summary: sanitizeHtml(bill.summary),
+      }));
+
+      const uniqueBills = sanitizedBills.filter((value, index, self) =>
+        index === self.findIndex((t) => t.title === value.title)
+      );
+
+      setBills(uniqueBills);
+
+      const allTags = uniqueBills.reduce((acc, bill) => {
         bill.tags.forEach(tag => {
           if (!acc.includes(tag) && !excludedTags.includes(tag)) {
             acc.push(tag);
@@ -36,6 +45,11 @@ function App() {
     getBills();
   }, []);
 
+  const sanitizeHtml = (htmlString) => {
+    const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+    return doc.body.textContent || "";
+  };
+
   const handleChipClick = (chip) => {
     if (filterChips.includes(chip)) {
       setFilterChips(filterChips.filter((c) => c !== chip));
@@ -48,18 +62,13 @@ function App() {
     setSearchInput(event.target.value);
   };
 
-  // Updated filter logic to ensure all filters must be met
   const filteredBills = bills.filter((bill) => {
     const matchesSearchTerm = bill.title.toLowerCase().includes(searchInput.toLowerCase()) ||
       bill.summary.toLowerCase().includes(searchInput.toLowerCase());
+    
+    const matchesTags = filterChips.every((chip) => bill.tags.includes(chip));
 
-    // Check if bill has all selected filter tags
-    const matchesFilters = filterChips.length === 0 || filterChips.every(chip => bill.tags.includes(chip));
-
-    // Ensure pinned bills are always shown, even if Introduced is hidden
-    const matchesIntroducedTag = (showIntroduced || !bill.tags.includes('Introduced')) || bill.tags.includes('Pinned');
-
-    return matchesSearchTerm && matchesFilters && matchesIntroducedTag;
+    return matchesSearchTerm && matchesTags;
   });
 
   const getFilteredSuggestions = () => {
@@ -79,26 +88,20 @@ function App() {
     setSearchInput('');
   };
 
-  // Sort the bills such that pinned ones are at the top
-  // Pinned bills are still at the top but now we sort by the `steps` order for all bills
   const sortedBills = filteredBills.sort((a, b) => {
     const aIsPinned = a.tags.includes('Pinned');
     const bIsPinned = b.tags.includes('Pinned');
     if (aIsPinned && !bIsPinned) {
-      return -1; // Pinned bills come first
+      return -1;
     } else if (!aIsPinned && bIsPinned) {
-      return 1; // Pinned bills come first
+      return 1;
     }
 
-    // If both are pinned or both are not pinned, compare by step
     const stepIndexA = steps.indexOf(a.currentStep);
     const stepIndexB = steps.indexOf(b.currentStep);
-    return stepIndexB - stepIndexA; // Sort by step in reverse order (farther along in process comes first)
+    return stepIndexB - stepIndexA;
   });
 
-  const toggleIntroduced = () => setShowIntroduced(!showIntroduced);
-
-  // Pagination logic
   const indexOfLastBill = currentPage * billsPerPage;
   const indexOfFirstBill = indexOfLastBill - billsPerPage;
   const currentBills = sortedBills.slice(indexOfFirstBill, indexOfLastBill);
@@ -117,18 +120,25 @@ function App() {
     }
   };
 
+  const toggleDetailsVisibility = (billId) => {
+    if (visibleBillDetails === billId) {
+      setVisibleBillDetails(null); // If clicked again, hide it
+    } else {
+      setVisibleBillDetails(billId); // Show the details for this bill
+    }
+  };
+
   return (
     <div className="app-container dark-mode">
       <header>
-        <h1>Bills in Congress</h1>
+        <h1>Congress Bills</h1>
       </header>
 
       <main>
-        {/* Combined Search and Filter Autocomplete */}
         <div className="autocomplete">
           <input
             type="text"
-            placeholder="Search bills or filter by Tags..."
+            placeholder="Search bills"
             value={searchInput}
             onChange={handleInputChange}
             className="search-filter-input"
@@ -147,9 +157,26 @@ function App() {
             </ul>
           )}
         </div>
-  {/* Display Available Tags at the Top */}            <div className="available-tags">           <strong>Available Tags:</strong>           {availableTags.length > 0 && (             <div className="tags">               {availableTags.map((tag, index) => (                 <span                   key={index}                   className={`tag tag-${tag.toLowerCase().replace(/\s+/g, '-')}`}                   onClick={() => handleChipClick(tag)}                 >                   {tag}                 </span>               ))}             </div>           )}         </div>
-        {/* Filter Chips */}
+
+        <div className="available-tags">
+          <strong>Filter tags:</strong>
+          {availableTags.length > 0 && (
+            <div className="tags">
+              {availableTags.map((tag, index) => (
+                <span
+                  key={index}
+                  className={`tag tag-${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                  onClick={() => handleChipClick(tag)}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+
         <div className="filter-chips">
+        <strong>Filters:</strong>
           {filterChips.map((chip) => (
             <span
               key={chip}
@@ -161,22 +188,34 @@ function App() {
           ))}
         </div>
 
-        {/* Toggle Button for Showing "Introduced" Tags */}
-        <button onClick={toggleIntroduced} className="toggle-button">
-          {showIntroduced ? 'Hide "Introduced" Bills' : 'Show "Introduced" Bills'}
-        </button>
-
         <section className="bills-list">
           <ul>
             {currentBills.map((bill) => (
               <li key={bill.bill_id}>
                 <article>
                   <strong>{bill.title}</strong>
-                  <p>{bill.summary}</p>
-                  <p>Party Support: {bill.partySupport}</p>
 
-                  {/* Tags Display */}
-                  <div className="tags">
+                  <div className="bill-summary">{bill.summary}</div>
+
+                  <p
+                    className={`party-support ${bill.partySupport === 'Democratic' ? 'democrat' : 
+                      bill.partySupport === 'Republican' ? 'republican' : 'other'}`}
+                  >
+                    Party Support: {bill.partySupport}
+                  </p>
+
+                  
+
+                  {/* Toggle Button */}
+                  <button onClick={() => toggleDetailsVisibility(bill.bill_id)}>
+                    {visibleBillDetails === bill.bill_id ? 'Hide Details' : 'Show Details'}
+                  </button>
+
+                  {/* Hidden Details Section with Animation */}
+                  <div
+                    className={`bill-details ${visibleBillDetails === bill.bill_id ? 'show' : ''}`}
+                  >
+                    <div className="tags">
                     {bill.tags.map((tag, index) => (
                       <span
                         key={index}
@@ -186,24 +225,26 @@ function App() {
                       </span>
                     ))}
                   </div>
-
-                  <div className="tracker">
-                    {steps.map((step, index) => (
-                      <div key={index} className={`step ${bill.currentStep === step ? 'active' : steps.indexOf(bill.currentStep) > index ? 'completed' : ''}`}>
-                        {step}
-                      </div>
-                    ))}
+                    <div className="tracker">
+                      {steps.map((step, index) => (
+                        <div
+                          key={index}
+                          className={`step ${bill.currentStep === step ? 'active' : steps.indexOf(bill.currentStep) > index ? 'completed' : ''}`}
+                        >
+                          {step}
+                        </div>
+                      ))}
+                    </div>
+                    <a href={bill.govtrack_url} target="_blank" rel="noopener noreferrer">
+                      Link to Bill's Page
+                    </a>
                   </div>
-                  <a href={bill.govtrack_url} target="_blank" rel="noopener noreferrer">
-                    More Info
-                  </a>
                 </article>
               </li>
             ))}
           </ul>
         </section>
 
-        {/* Pagination Controls */}
         <div className="pagination">
           <button onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
           <span>{currentPage} / {totalPages}</span>

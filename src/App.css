@@ -1,17 +1,34 @@
+/* Variables for common colors */
+:root {
+  --bg-color: #121212;
+  --text-color: hsl(0, 0%, 93%);
+  --primary-color: #157015; /* Pastel Green */
+  --secondary-color: #112f70; /* Pastel Light Blue */
+  --accent-color: #7abfff; /* Light Pastel Blue */
+  --dark-bg: #1e1e1e;
+  --light-bg: #252525;
+  --hover-bg: #444;
+  --highlight-color: #b3b2b2;
+  --blue-light: #3498db;
+  --gray-dark: #333;
+  --gray-medium: #555;
+  
+}
+
 /* General Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #eee;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.7;
   margin: 0;
   padding: 0;
 }
 
 .app-container {
-  max-width: 900px;
-  margin: 30px auto;
-  background-color: #1e1e1e;
+  max-width: 90%;
+  margin: 10px auto;
+  background-color: var(--dark-bg);
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.08);
   overflow: hidden;
@@ -20,7 +37,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: var(--gray-dark);
   color: #fff;
   text-align: center;
   padding: 2rem 0;
@@ -40,7 +57,7 @@ main {
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #333;
+  background-color: var(--gray-dark);
   color: #bbb;
   font-size: 0.9rem;
 }
@@ -60,7 +77,7 @@ footer {
   flex: 1;
   padding: 1rem;
   text-align: center;
-  border-bottom: 4px solid #555;
+  border-bottom: 4px solid var(--gray-medium);
   color: #bbb;
   font-size: 0.8rem;
   transition: all 0.3s ease;
@@ -78,15 +95,15 @@ footer {
 }
 
 .step.active {
-  border-bottom-color: #28a745;
+  border-bottom-color: var(--primary-color);
   font-weight: 600;
-  color: #28a745;
+  color: var(--primary-color);
   background-color: #e9f8ef;
 }
 
 .step.completed {
-  border-bottom-color: #17a2b8;
-  color: #17a2b8;
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
   background-color: #e1f5fe;
 }
 
@@ -100,7 +117,7 @@ footer {
   margin-bottom: 2rem;
   padding: 1.5rem;
   border-radius: 12px;
-  background-color: #252525;
+  background-color: var(--light-bg);
   box-shadow: 0 3px 7px rgba(255, 255, 255, 0.05);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
@@ -124,7 +141,7 @@ footer {
 
 /* More Info Link */
 .bills-list a {
-  color: #007bff;
+  color: var(--accent-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -143,7 +160,7 @@ footer {
 }
 
 .chip {
-  background-color: #666; /* Default color for chip */
+  background-color: #666;
   color: #fff;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
@@ -155,47 +172,32 @@ footer {
 }
 
 .chip:hover {
-  background-color: #444;
+  background-color: var(--hover-bg);
   transform: translateY(-1px);
 }
 
 .chip.active {
-  background-color: #2980b9;
+  background-color: var(--highlight-color);
 }
-
-
 
 /* General tag style */
 .tag {
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   font-size: 0.85rem;
-  margin-right: 0.5rem;
+  margin: 0.7rem;
   display: inline-block;
-  background-color: #666;  /* Default color */
+  background-color: #666;
   color: #fff;
   margin-top: 0.5rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Dynamic Tag Color Styles */
-.tag.tag-transgender {
-  background-color: #ff9090;
-}
-
-.tag.tag-pinned {
-  background-color: #ffd000;
-}
-
-.tag.tag-lgbtq {
-  background-color: #5cb0ff;
-}
-
-.tag.tag-dei {
-  background-color: #00a4af;
-}
-
-
+.tag.tag-transgender { background-color: #ff9090; }
+.tag.tag-pinned { background-color: #ffd000; }
+.tag.tag-lgbtq { background-color: #5cb0ff; }
+.tag.tag-dei { background-color: #00a4af; }
 
 .tag:hover {
   transform: scale(1.1);
@@ -214,7 +216,7 @@ footer {
 
 .search-bar:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: var(--blue-light);
   box-shadow: 0 2px 4px rgba(52, 152, 219, 0.1);
 }
 
@@ -222,18 +224,18 @@ footer {
 .search-filter-input {
   width: 100%;
   padding: 14px;
-  border: 1px solid #555;
+  border: 1px solid var(--gray-medium);
   border-radius: 8px;
   font-size: 1.1rem;
   box-sizing: border-box;
   transition: border-color 0.2s ease, background-color 0.3s, color 0.3s;
-  background-color: #333;
-  color: #eee;
+  background-color: var(--gray-dark);
+  color: var(--text-color);
 }
 
 .search-filter-input:focus {
   outline: none;
-  border-color: #555;
+  border-color: var(--gray-medium);
   box-shadow: 0 0 0 0.2rem rgba(85, 85, 85, 0.25);
 }
 
@@ -248,7 +250,7 @@ footer {
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #333;
+  background-color: var(--gray-dark);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   list-style: none;
@@ -263,36 +265,30 @@ footer {
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.15s ease;
-  color: #eee;
+  color: var(--text-color);
 }
 
 .autocomplete-item:hover {
-  background-color: #444;
+  background-color: var(--hover-bg);
 }
 
-/* Show Introduced Button */
-.show-introduced {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.show-introduced button {
+button {
   padding: 0.75rem 1.25rem;
   font-size: 1rem;
   color: #fff;
-  background-color: #28a745;
+  background-color: var(--primary-color);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.show-introduced button:hover {
-  background-color: #218838;
+button:hover {
+  background-color: #0e5700;
   transform: translateY(-2px);
 }
 
-.show-introduced button:focus {
+button:focus {
   outline: none;
 }
 
@@ -307,7 +303,7 @@ footer {
   padding: 0.75rem 1.25rem;
   font-size: 1rem;
   color: #fff;
-  background-color: #007bff;
+  background-color: var(--accent-color);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -375,7 +371,7 @@ footer {
     font-size: 0.75rem;
     padding: 0.75rem;
     text-align: left;
-    border-bottom: 2px solid #555;
+    border-bottom: 2px solid var(--gray-medium);
   }
 
   .step:first-child {
@@ -392,6 +388,7 @@ footer {
   .app-container {
     margin: 15px;
     padding: 0.5rem;
+    width: 100%;
   }
 
   header h1 {
@@ -403,19 +400,55 @@ footer {
   }
 
   .step {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 0.5rem;
   }
-  
 }
-.available-tags{
-margin-bottom: 1.5rem;
-}
+
+/* Toggle Button Styling */
 .toggle-button {
-  font-size: 18px; /* Adjust font size to make the text larger */
-  padding: 5px 10px; /* Increase padding to make the button bigger */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Optional: make the corners rounded */
-  cursor: pointer; /* Change cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth color change on hover */
+  font-size: 18px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.toggle-button:hover {
+  background-color: var(--highlight-color);
+}
+
+/* Party Support */
+.party-support {
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.party-support.democrat {
+  color: #3b82f6;
+}
+
+.party-support.republican {
+  color: #ef4444;
+}
+.party-support.mixed {
+  color: #5c097c;
+}
+
+.bill-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.bill-details.show {
+  max-height: 500px; /* Adjust this value as needed */
+  opacity: 1;
+}
+
+
+
