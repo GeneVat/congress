@@ -132,6 +132,11 @@ function App() {
     <div className="app-container dark-mode">
       <header>
         <h1>Congress Bills</h1>
+        <div className="pagination">
+          <button onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
+          <span>{currentPage} / {totalPages}</span>
+          <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
+        </div>
       </header>
 
       <main>
@@ -245,11 +250,7 @@ function App() {
           </ul>
         </section>
 
-        <div className="pagination">
-          <button onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
-          <span>{currentPage} / {totalPages}</span>
-          <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
-        </div>
+       
       </main>
     </div>
   );
