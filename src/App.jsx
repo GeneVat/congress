@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { fetchBills } from './congress-api';
 import * as billsData from './bills-data';
 import './App.css';
 
@@ -10,14 +9,13 @@ function App() {
   const [availableTags, setAvailableTags] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [billsPerPage] = useState(20);
-  const [visibleBillDetails, setVisibleBillDetails] = useState(null); // Track visible bill details
+  const [visibleBillDetails, setVisibleBillDetails] = useState(null);
   const steps = billsData.getSteps();
 
   const excludedTags = ['Pinned'];
 
   useEffect(() => {
     const getBills = async () => {
-      await fetchBills();
       const billsList = billsData.getBills();
 
       const sanitizedBills = billsList.map(bill => ({
@@ -51,11 +49,11 @@ function App() {
   };
 
   const handleChipClick = (chip) => {
-    if (filterChips.includes(chip)) {
-      setFilterChips(filterChips.filter((c) => c !== chip));
-    } else {
-      setFilterChips([...filterChips, chip]);
-    }
+    setFilterChips((prevChips) =>
+      prevChips.includes(chip)
+        ? prevChips.filter((c) => c !== chip)
+        : [...prevChips, chip]
+    );
   };
 
   const handleInputChange = (event) => {
@@ -91,11 +89,8 @@ function App() {
   const sortedBills = filteredBills.sort((a, b) => {
     const aIsPinned = a.tags.includes('Pinned');
     const bIsPinned = b.tags.includes('Pinned');
-    if (aIsPinned && !bIsPinned) {
-      return -1;
-    } else if (!aIsPinned && bIsPinned) {
-      return 1;
-    }
+    if (aIsPinned && !bIsPinned) return -1;
+    if (!aIsPinned && bIsPinned) return 1;
 
     const stepIndexA = steps.indexOf(a.currentStep);
     const stepIndexB = steps.indexOf(b.currentStep);
@@ -140,6 +135,7 @@ function App() {
       </header>
 
       <main>
+        {/* Search input */}
         <div className="autocomplete">
           <input
             type="text"
@@ -163,6 +159,7 @@ function App() {
           )}
         </div>
 
+        {/* Available tags */}
         <div className="available-tags">
           <strong>Filter tags:</strong>
           {availableTags.length > 0 && (
@@ -180,8 +177,9 @@ function App() {
           )}
         </div>
 
+        {/* Filter chips */}
         <div className="filter-chips">
-        <strong>Filters:</strong>
+          <strong>Filters:</strong>
           {filterChips.map((chip) => (
             <span
               key={chip}
@@ -193,6 +191,7 @@ function App() {
           ))}
         </div>
 
+        {/* Bill list */}
         <section className="bills-list">
           <ul>
             {currentBills.map((bill) => (
@@ -209,8 +208,6 @@ function App() {
                     Party Support: {bill.partySupport}
                   </p>
 
-                  
-
                   {/* Toggle Button */}
                   <button onClick={() => toggleDetailsVisibility(bill.bill_id)}>
                     {visibleBillDetails === bill.bill_id ? 'Hide Details' : 'Show Details'}
@@ -221,15 +218,15 @@ function App() {
                     className={`bill-details ${visibleBillDetails === bill.bill_id ? 'show' : ''}`}
                   >
                     <div className="tags">
-                    {bill.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className={`tag tag-${tag.toLowerCase().replace(/\s+/g, '-')}`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                      {bill.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className={`tag tag-${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                     <div className="tracker">
                       {steps.map((step, index) => (
                         <div
@@ -249,8 +246,6 @@ function App() {
             ))}
           </ul>
         </section>
-
-       
       </main>
     </div>
   );
