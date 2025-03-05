@@ -126,7 +126,7 @@ function App() {
   return (
     <div className="app-container dark-mode">
       <header>
-        <h1>Congress Bills</h1>
+        <h1>Bills Against LGBTQ</h1>
         <div className="pagination">
           <button onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
           <span>{currentPage} / {totalPages}</span>
