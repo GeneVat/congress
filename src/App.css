@@ -12,7 +12,6 @@
   --blue-light: #3498db;
   --gray-dark: #333;
   --gray-medium: #555;
-  
 }
 
 /* General Styles */
@@ -434,6 +433,7 @@ button:focus {
 .party-support.republican {
   color: #ef4444;
 }
+
 .party-support.mixed {
   color: #5c097c;
 }
@@ -449,6 +449,3 @@ button:focus {
   max-height: 500px; /* Adjust this value as needed */
   opacity: 1;
 }
-
-
-
